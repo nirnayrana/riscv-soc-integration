@@ -20,6 +20,7 @@ The design focuses on **Hardware/Software Co-design**, demonstrating how a proce
 ## 📊 Verification
 The system was verified using a C-to-Assembly driver that transmits strings over UART.
 * **Result:** Successful transmission of data ("HI") with 1000ns hardware stalls verified via waveform analysis.
+<img width="1858" height="435" alt="soc_wave" src="https://github.com/user-attachments/assets/920c9e8e-c982-4506-a724-509c3ee80bf5" />
 
 GTKWave capture showing Hardware Flow Control. At marker 105ns, the UART begins transmission. The APB Bridge asserts the Stall signal, causing the Program Counter (PC) to freeze (flat line) until the transaction completes, preventing data loss.
 * **Testbench:** `tb/riscv_soc_tb.sv` monitors the APB handshake and serial output.
